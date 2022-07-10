@@ -1,0 +1,26 @@
+package com.caching.caching.Dao;
+
+import java.util.HashMap;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Repository;
+
+import com.caching.caching.Entity.Product;
+
+@Repository
+public class ProductDaoImpl {
+	
+	HashMap<Integer,Product> products = new HashMap<>();
+	
+	@PostConstruct
+	private void fillProducts() {
+		products.put(1, new Product(1, "Chocolate", 65));
+		products.put(2, new Product(2, "cake", 200));
+		products.put(3, new Product(3, "almonds", 700));
+		products.put(4, new Product(4, "peanut butter", 200));
+		products.put(5, new Product(5, "bat", 1200));
+		products.put(6, new Product(6, "shorts", 600));
+	}
+
+}

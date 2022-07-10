@@ -1,0 +1,6 @@
+package com.caching.caching.Cache;
+
+//Generics
+public class CacheStore<T> {
+
+}

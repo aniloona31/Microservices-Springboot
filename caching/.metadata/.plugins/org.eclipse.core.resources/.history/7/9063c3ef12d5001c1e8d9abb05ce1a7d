@@ -1,0 +1,5 @@
+package com.caching.caching.Cache;
+
+public class CacheStore<T> {
+
+}

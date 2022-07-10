@@ -1,0 +1,6 @@
+package com.kafka.service;
+
+public interface MessageService {
+	
+	public void produceMessage(String topic,String key,String value);
+}

@@ -1,0 +1,6 @@
+package com.kafka.publishers;
+
+public interface MessagePublisher {
+	
+	public void Publish(String topic,String key,String value);
+}

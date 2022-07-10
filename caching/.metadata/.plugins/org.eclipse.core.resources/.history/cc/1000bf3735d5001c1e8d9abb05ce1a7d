@@ -1,0 +1,26 @@
+package com.caching.caching.Cache;
+
+import java.util.concurrent.TimeUnit;
+
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
+
+//Generics
+public class CacheStore<T> {
+
+	private Cache<Integer,T> cache;
+	
+	/*
+	 * define the constructor to build the cache
+	 * 
+	 * what things i should define in cache??
+	 * TTL (time to live)
+	 * 
+	 * guava cache uses builder design pattern
+	 * concurrencyLevel tells how many parallel requests can come.
+	 */
+	
+	public CacheStore(int ttl,TimeUnit timeUnit) {
+		Cache = CacheBuilder.newBuilder().expireAfterWrite(ttl, timeUnit)
+	}
+}

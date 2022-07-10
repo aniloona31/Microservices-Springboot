@@ -1,0 +1,13 @@
+package com.kafka.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class MessageServiceImpl implements MessageService {
+
+	@Override
+	public void produceMessage(String topic, String key, String value) {
+		
+	}
+
+}

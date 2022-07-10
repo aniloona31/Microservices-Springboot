@@ -1,0 +1,12 @@
+package com.caching.caching.Cache;
+
+import java.util.concurrent.TimeUnit;
+
+import com.caching.caching.Entity.Employee;
+
+public class CacheStoreBeans {
+	
+	public CacheStore<Employee> employeeCache(){
+		return new CacheStore<Employee>(120, TimeUnit.SECONDS);
+	};
+}

@@ -1,0 +1,23 @@
+package com.kafka.publishers;
+
+import java.util.Properties;
+
+public class KafkaMessagePublisherImpl implements MessagePublisher{
+
+	@Override
+	public void publish(String topic, String key, String value) {
+		//logic for sending message to kafka.. the first task is to provide the address
+		//of the topic and also the port number.
+		
+		Properties properties = new Properties();
+		properties.put("bootstrap.servers", "127.0.0.0:9092");
+		
+		//key and value Serializer
+		properties.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");
+		properties.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer");
+		
+		//i need to define the partitioning logic
+		properties.put("pertitioner.class", "org.apache.kafka.clients.producer.internals.DefaultPartitioner");
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.redis.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.redis.entity.User;
+
+public interface UserDao extends JpaRepository<User, Long> {
+
+}

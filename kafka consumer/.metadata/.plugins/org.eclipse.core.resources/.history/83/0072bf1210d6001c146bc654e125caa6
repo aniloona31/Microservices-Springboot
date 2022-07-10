@@ -1,0 +1,5 @@
+package com.KafkaConsumer.consumer;
+
+public class MessageConsumer {
+
+}

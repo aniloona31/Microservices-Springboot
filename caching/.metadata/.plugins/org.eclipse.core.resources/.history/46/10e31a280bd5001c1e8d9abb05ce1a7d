@@ -1,0 +1,5 @@
+package com.caching.caching.Service;
+
+public interface ProductService {
+
+}

@@ -1,0 +1,8 @@
+package com.KafkaConsumer.consumer;
+
+import org.springframework.kafka.annotation.KafkaListener;
+
+@KafkaListener(topics = "demo")
+public class ListenMessage {
+
+}

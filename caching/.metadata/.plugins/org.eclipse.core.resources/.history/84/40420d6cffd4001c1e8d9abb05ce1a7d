@@ -1,0 +1,5 @@
+package com.caching.caching.Entity;
+
+public class Employee {
+
+}

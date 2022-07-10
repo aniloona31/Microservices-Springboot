@@ -1,0 +1,38 @@
+package com.kafka.publishers;
+
+import java.util.Properties;
+
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+
+public class KafkaMessagePublisherImpl implements MessagePublisher{
+
+	@Override
+	public void publish(String topic, String key, String value) {
+		//logic for sending message to kafka.. the first task is to provide the address
+		//of the topic and also the port number.
+		
+		Properties properties = new Properties();
+		properties.put("bootstrap.servers", "127.0.0.0:9092");
+		
+		//key and value Serializer
+		properties.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");
+		properties.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer");
+		
+		//i need to define the partitioning logic
+		properties.put("pertitioner.class", "org.apache.kafka.clients.producer.internals.DefaultPartitioner");
+		
+		//create a producer object  coming from kafkaclient
+		
+		Producer<String, String> producer = new KafkaProducer<String, String>(properties);
+		
+		System.out.println("producer is producing the message");
+		//publishing the message
+		producer.send(new ProducerRecord<String, String>(topic,key,value));
+		
+		//close the producer section
+		producer.close();
+	}
+
+}

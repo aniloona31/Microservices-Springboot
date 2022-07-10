@@ -1,0 +1,17 @@
+package com.caching.caching.Cache;
+
+import java.util.concurrent.TimeUnit;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.caching.caching.Entity.Employee;
+
+@Configuration
+public class CacheStoreBeans {
+	
+	@Bean
+	public CacheStore<Employee> employeeCache(){
+		return new CacheStore<Employee>(60, TimeUnit.SECONDS);
+	};
+}
