@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.microservices.currencyconversionservice.Entity.CurrencyConversion;
 
-@FeignClient(name="currency-exchange",url="localhost:8001")
+@FeignClient(name="currency-exchange")
 public interface CurrencyExchangeProxy {
 	
 	
