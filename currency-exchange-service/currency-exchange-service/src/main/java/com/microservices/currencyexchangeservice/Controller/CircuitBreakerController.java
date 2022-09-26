@@ -17,8 +17,8 @@ public class CircuitBreakerController {
 	private Logger logger = org.slf4j.LoggerFactory.getLogger(CircuitBreakerController.class);
 		
 //	@Retry(name = "sample-api", fallbackMethod = "hardcodedResponse")
-//	@CircuitBreaker(name = "default",fallbackMethod = "hardcodedResponse")
-	@RateLimiter(name = "default")
+	@CircuitBreaker(name = "default",fallbackMethod = "hardcodedResponse")
+//	@RateLimiter(name = "default")
 	@GetMapping("/sample-api")
 	public String sampleApi() {
 		logger.info("retrying sample api");
