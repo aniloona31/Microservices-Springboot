@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @Entity
 public class CurrencyExchange {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name = "currency_from")
